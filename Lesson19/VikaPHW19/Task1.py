@@ -49,16 +49,22 @@ class MyIter:
     def __init__(self, iter_elem):
         self.iter_elem = iter_elem
 
-    def my_iter(self):
+    def __iter__(self):
+        return self
+
+    def __next__(self):
         for i in self.iter_elem:
-            return i
+            yield i
 
     def __getitem__(self, item):
         return self.iter_elem[item]
 
 
-list_3 = MyIter(['vika', 'oleg', 'daisy'])
-print(MyIter.my_iter(list_3))
-print(MyIter.__getitem__(list_3,2))
+list_3 = MyIter(['a', 'b', 'c'])
 
+c = list_3.__next__()
+for i in c:
+    print(i)
+
+print(list_3[2])
 
