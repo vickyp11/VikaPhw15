@@ -114,7 +114,7 @@ Also, create a simple generic function, which takes as input instance of a Cat o
 Потрібно додати магічні методи для математичних операцій та операції порівняння між об'єктами класу Fraction
 """
 
-from math import gcd, lcm
+from math import gcd
 
 
 class Fraction:
