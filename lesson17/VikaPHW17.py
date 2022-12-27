@@ -123,7 +123,7 @@ class Fraction:
         self.den = den
 
     def __add__(self, other):
-        if not isinstance(other, type(self)):
+        if not isinstance(other.num, int) or not isinstance(other.den, int) or not isinstance(self.num, int) or not isinstance(self.den, int):
             raise ValueError('Are you sure it is number?')
         else:
             self.sum_num = self.num * other.den + other.num * self.den
@@ -137,7 +137,7 @@ class Fraction:
             return Fraction(int(res_num), int(res_den))
 
     def __mul__(self, other):
-        if not isinstance(other, type(self)):
+        if not isinstance(other.num, int) or not isinstance(other.den, int) or not isinstance(self.num, int) or not isinstance(self.den, int):
             raise ValueError('Are you sure it is number?')
         else:
             self.mult_num = self.num * other.num
@@ -151,7 +151,7 @@ class Fraction:
             return Fraction(int(res_num_mult), int(res_den_mult))
 
     def __sub__(self, other):
-        if not isinstance(other, type(self)):
+        if not isinstance(other.num, int) or not isinstance(other.den, int) or not isinstance(self.num, int) or not isinstance(self.den, int):
             raise ValueError('Are you sure it is number?')
         else:
             self.sub_num = self.num * other.den - other.den * self.den
@@ -166,7 +166,7 @@ class Fraction:
             return Fraction(int(res_sub_num), int(res_sub_den))
 
     def __truediv__(self, other):
-        if not isinstance(other, type(self)):
+        if not isinstance(other.num, int) or not isinstance(other.den, int) or not isinstance(self.num, int) or not isinstance(self.den, int):
             raise ValueError('Are you sure it is number?')
         else:
             self.div_num = self.num * other.den
